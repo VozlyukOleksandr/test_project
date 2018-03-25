@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Site</title>
+</head>
+<body>
+{% include "header.html" %}
+<a href="/site/registration/">Registration</a>
+<p></p>
+<a href="/site/login/">Login</a>
+
+
+
+<p>Hello, {{username}}</p>
+
+{% include "form_post.html" %}
+<p></p>
+{% for post in posts %}
+
+    <p>{{ post.name|upper }}</p>
+<img src="{{post.file}}">
+
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>
+
+</body>
+</html>

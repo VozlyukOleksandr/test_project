@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<form action="/site/index/" method="post" enctype="multipart/form-data" >
+     <input name="csrfmiddlewaretoken" value={{cs}} type="hidden">
+     <input name="post_type" value="pos" type="hidden">
+     <div class="form-group">
+         <label for="exampleFormControlTextarea1">Enter your post</label>
+         <textarea class="form-control col-md-5" name="name" id="exampleFormControlTextarea1" rows="3"></textarea>
+     </div>
+
+    <div class="form-group">
+         <label for="exampleFormControlFile1">Example file input</label>
+         <input type="file" name='file' class="form-control-file" id="exampleFormControlFile1">
+    </div>
+
+     <button type="submit" class="btn btn-dark col-md-2">Post</button>
+
+</form>
+</body>
+</html>

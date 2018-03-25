@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+{% include "header.html" %}
+
+<h1>Войти</h1>
+
+<form action="/site/index/" method="post">
+     <input name="csrfmiddlewaretoken" value={{cs}} type="hidden">
+    <input name="post_type" value="log" type="hidden">
+ <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" maxlength="15" name="email" class="form-control col-md-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control col-md-4" id="exampleInputPassword1" placeholder="Password">
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-dark col-md-2">Login</button>
+
+</form>
+
+
+
+
+
+</body>
+</html>
